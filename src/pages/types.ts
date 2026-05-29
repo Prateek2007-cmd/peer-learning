@@ -143,6 +143,8 @@ export type Database = {
           status: string
           student_id: string | null
           teacher_id: string | null
+          seat_limit: number | null
+          participants: number
           title: string | null
           tags: string[] | null
         }
@@ -155,6 +157,8 @@ export type Database = {
           status?: string
           student_id?: string | null
           teacher_id?: string | null
+          seat_limit?: number | null
+          participants?: number
           title?: string | null
           tags?: string[] | null
         }
@@ -167,6 +171,8 @@ export type Database = {
           status?: string
           student_id?: string | null
           teacher_id?: string | null
+          seat_limit?: number | null
+          participants?: number
           title?: string | null
           tags?: string[] | null
         }
@@ -204,6 +210,10 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      join_session: {
+        Args: { p_session_id: string }
+        Returns: undefined
+      }
       tick_session_statuses: {
         Args: Record<PropertyKey, never>
         Returns: undefined
@@ -340,3 +350,4 @@ export const Constants = {
     Enums: {},
   },
 } as const
+
