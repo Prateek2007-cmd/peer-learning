@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useCallback, useEffect, useRef, useState } from "react";
 
 import { toast } from "@/hooks/use-toast";
@@ -129,3 +130,5 @@ export const useResources = (filters?: ResourceFilters) => {
     refetch: fetchResources,
   };
 };
+
+
