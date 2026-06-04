@@ -55,7 +55,7 @@ const Sparkles: React.FC = () => {
       timeouts.forEach(clearTimeout);
       timeouts.clear();
       if (container) {
-        container.innerHTML = "";
+        container.replaceChildren();
       }
     };
   }, []);
