@@ -21,3 +21,5 @@ export const getSupabaseAdmin = () => {
   
   return supabaseAdminClient;
 };
+
+export const getSupabase = getSupabaseAdmin;
