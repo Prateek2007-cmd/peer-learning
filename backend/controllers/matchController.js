@@ -169,7 +169,7 @@ export const getSupabaseDiscover = async (req, res) => {
       .from("profiles")
       .select("id, name, skills, interests, learning_goals, teach_subjects, learn_subjects, learning_style, preferred_language, timezone")
       .neq("id", userId)
-      .limit(100);
+      .limit(limit);
 
     if (search.trim()) {
       const safeSearch = search.trim().replace(/[",()]/g, '');
