@@ -629,3 +629,43 @@ body::after {
 }
 
 html { scroll-behavior: smooth; }
+
+/* ── Accessibility: Reduced Motion ──
+   Suppress all infinite / decorative animations for users who prefer
+   reduced motion. Essential interactive transitions (e.g. button hover
+   scale) are kept intentionally short rather than fully removed. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  body {
+    background-size: 100% 100%;
+  }
+
+  body::after {
+    animation: none;
+  }
+
+  .sparkle {
+    animation: none;
+    opacity: 0;
+  }
+
+  .shimmer {
+    animation: none;
+  }
+
+  .pulse-ring::after {
+    animation: none;
+  }
+
+  .btn-primary {
+    animation: none;
+  }
+}
